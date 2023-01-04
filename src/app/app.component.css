@@ -1,0 +1,7 @@
+::ng-deep {
+  .p-datatable-table .p-datatable-thead {
+    border-top-style: solid !important;
+    border-top-color: #c10202 !important;
+    border-top-width: 3px !important;
+  }
+}
