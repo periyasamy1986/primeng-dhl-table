@@ -1,3 +1,11 @@
+<h5
+  style="
+    margin: 0px !important;
+    margin-bottom: -18px !important;
+"
+>
+  DHL Normal Table
+</h5>
 <p-table [value]="products">
   <ng-template pTemplate="header">
     <tr>
@@ -12,11 +20,69 @@
       <td>{{ product.code }}</td>
       <td>{{ product.name }}</td>
       <td>{{ product.category }}</td>
-      <td>{{ product.quantity }}</td>
+      <td
+        [ngClass]="{
+          success: product.quantity > 10,
+          danger: product.quantity < 10
+        }"
+      >
+        {{ product.quantity }}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+<h5
+  style="
+    margin: 0px !important;
+    margin-bottom: -18px !important;
+"
+>
+  DHL Table with Normal Footer
+</h5>
+<p-table [value]="products">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Quantity</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{ product.code }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.category }}</td>
+      <td>
+        <span
+          [ngClass]="{
+            'success-bg': product.quantity > 10,
+            'danger-bg': product.quantity < 10
+          }"
+        >
+          {{ product.quantity }}</span
+        >
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <tr>
+      <td colspan="1" class="center">Totals</td>
+      <td>$506,202</td>
+      <td colspan="1" class="center">Totals</td>
+      <td>$506,202</td>
     </tr>
   </ng-template>
 </p-table>
 
+<h5
+  style="
+    margin: 0px !important;
+    margin-bottom: -18px !important;
+"
+>
+  DHL Table with Complex Footer
+</h5>
 <p-table [value]="products">
   <ng-template pTemplate="header">
     <tr>
@@ -36,8 +102,61 @@
   </ng-template>
   <ng-template pTemplate="footer">
     <tr>
-      <td colspan="3">Totals</td>
+      <td rowspan="2" class="center">Totals</td>
+      <td colspan="1">Totals 1</td>
+
       <td>$506,202</td>
+      <td>$509,202</td>
+    </tr>
+    <tr>
+      <td colspan="1">Totals 1</td>
+
+      <td>$507,202</td>
+      <td>$508,202</td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<!--[scrollable]="true"
+  scrollHeight="400px"
+  -->
+<h5
+  style="
+margin: 0px !important;
+margin-bottom: -18px !important;
+"
+>
+  DHL Table Subheader Grouping
+</h5>
+<p-table
+  [value]="products"
+  sortField="productowner.name"
+  sortMode="single"
+  rowGroupMode="subheader"
+  groupRowsBy="productowner.name"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Quantity</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="groupheader" let-product>
+    <tr pRowGroupHeader>
+      <td colspan="5">
+        <span class="p-text-bold">{{ product.productowner.name }}</span>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-product let-rowIndex="rowIndex">
+    <tr>
+      <td>{{ product.code }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.quantity }}</td>
     </tr>
   </ng-template>
 </p-table>

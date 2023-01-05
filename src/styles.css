@@ -9,8 +9,51 @@ body {
   border-top-width: 3pt !important;
 }
 
-.p-datatable .p-datatable-thead > tr > th {
-  border: 1.2pt solid #000000 !important;
-  border-width: 0 0 1.2pt 0 !important;
+.p-datatable .p-datatable-thead > tr > th,
+.p-datatable .p-datatable-tbody > tr > td,
+.p-datatable .p-datatable-tfoot > tr > td {
+  border: 1.3px solid #000000 !important;
+  border-width: 0 0 1.3px 0 !important;
   background: #ffffff !important;
+  padding: 0.5rem !important;
+}
+
+.p-datatable table {
+  margin: 25px 0px 50px 0px;
+  border-bottom-style: solid !important;
+  border-bottom-color: #c10202 !important;
+  border-bottom-width: 3pt !important;
+}
+
+.p-datatable .p-datatable-tfoot > tr > td {
+  background: #fff5cc !important;
+}
+
+.p-datatable .p-datatable-tfoot > tr > td.center {
+  text-align: center !important;
+}
+
+.success {
+  font-weight: 700;
+  color: #66bb6a;
+}
+
+.danger {
+  font-weight: 700;
+  color: #c10202;
+}
+.success-bg {
+  font-weight: 700;
+  background: #d1ecd2 !important;
+  padding: 1px 6px !important;
+}
+
+.danger-bg {
+  font-weight: 700;
+  background: #f7d0d0 !important;
+  padding: 1px 6px !important;
+}
+
+.p-datatable .p-datatable-tbody .p-rowgroup-header > td {
+  background: #fff5cc !important;
 }
