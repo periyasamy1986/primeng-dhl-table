@@ -11,7 +11,7 @@
       "quantity": 24,
       "inventoryStatus": "INSTOCK",
       "rating": 5,
-      "productowner": { "name": "Product Owner 1" }
+      "productowner": { "name": "Product Sub-Group 1" }
     },
     {
       "id": "1001",
@@ -24,7 +24,7 @@
       "quantity": 61,
       "inventoryStatus": "INSTOCK",
       "rating": 4,
-      "productowner": { "name": "Product Owner 1" }
+      "productowner": { "name": "Product Sub-Group 1" }
     },
     {
       "id": "1002",
