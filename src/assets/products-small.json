@@ -37,7 +37,7 @@
       "quantity": 2,
       "inventoryStatus": "LOWSTOCK",
       "rating": 3,
-      "productowner": { "name": "Product Owner 2" }
+      "productowner": { "name": "Product Sub-Group 2" }
     }
   ]
 }
